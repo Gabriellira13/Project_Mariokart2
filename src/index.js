@@ -7,10 +7,10 @@ const player1 = {
   };
   
   const player2 = {
-    NOME: "Luigi",
-    VELOCIDADE: 3,
-    MANOBRABILIDADE: 4,
-    PODER: 4,
+    NOME: "Bowser",
+    VELOCIDADE: 5,
+    MANOBRABILIDADE: 2,
+    PODER: 5,
     PONTOS: 0,
   };
   
@@ -38,7 +38,7 @@ const player1 = {
   
   async function logRollResult(characterName, block, diceResult, attribute) {
     console.log(
-      `${characterName} 🎲 rolou um dado de ${block} ${diceResult} + ${attribute} = ${
+      `${characterName} 🎲 rolou os dados de ${block} ${diceResult} + ${attribute} = ${
         diceResult + attribute
       }`
     );
@@ -120,14 +120,14 @@ const player1 = {
   
         if (powerResult1 > powerResult2 && character2.PONTOS > 0) {
           console.log(
-            `${character1.NOME} venceu o confronto! ${character2.NOME} perdeu 1 ponto 🐢`
+            `${character1.NOME} venceu o confronto! e ${character2.NOME} perdeu 1 ponto 🐢`
           );
           character2.PONTOS--;
         }
   
         if (powerResult2 > powerResult1 && character1.PONTOS > 0) {
           console.log(
-            `${character2.NOME} venceu o confronto! ${character1.NOME} perdeu 1 ponto 🐢`
+            `${character2.NOME} venceu o confronto! e ${character1.NOME} perdeu 1 ponto 🐢`
           );
           character1.PONTOS--;
         }
@@ -141,10 +141,10 @@ const player1 = {
   
       // verificando o vencedor
       if (totalTestSkill1 > totalTestSkill2) {
-        console.log(`${character1.NOME} marcou um ponto!`);
+        console.log(`${character1.NOME} ganhou um ponto!`);
         character1.PONTOS++;
       } else if (totalTestSkill2 > totalTestSkill1) {
-        console.log(`${character2.NOME} marcou um ponto!`);
+        console.log(`${character2.NOME} ganhou um ponto!`);
         character2.PONTOS++;
       }
   
@@ -166,7 +166,7 @@ const player1 = {
   
   (async function main() {
     console.log(
-      `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`
+      `🏁🚨 Corrrida entre ${player1.NOME} e ${player2.NOME} que vença o melhor 🏁🚨\n`
     );
   
     await playRaceEngine(player1, player2);
